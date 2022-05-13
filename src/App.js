@@ -1,7 +1,7 @@
 import './App.css';
 
 import Filters from "./components/Filters"
-import Beers from "./components/Beers"
+import Beers from "./pages/Beers"
 
 function App() {
   return (
