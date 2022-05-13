@@ -1,6 +1,6 @@
 import React from "react"
 
-const Card = ({beer: {image_url, name, abv, ibu, tagline, description, food_pairing}}) => {
+const Card = ({beer: {image_url, name, abv, ibu, tagline, description, food_pairing, ingredients}}) => {
     return(
         <div className="beer-wrapper card">
             <div className="beer">
@@ -15,7 +15,8 @@ const Card = ({beer: {image_url, name, abv, ibu, tagline, description, food_pair
                 <div className="beer__name">{name}</div>
                 <div className="beer__tagline">{tagline}</div>
                 <div className="beer__description">{description}</div>
-                <div className="beer_food-pairing">Pair with: {food_pairing.join(", ")}</div>
+                <div className="beer__food-pairing">Pair with: {food_pairing.join(", ")}</div>
+                <div className="beer_yeast">Yeast: {ingredients.yeast}</div>
             </div>
         </div>
 

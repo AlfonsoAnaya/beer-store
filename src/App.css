@@ -35,7 +35,6 @@ header {
   color: var(--off-white);
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1em;
 }
 
 /* main container */
@@ -55,10 +54,9 @@ header {
 .filters {
   justify-content: center;
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, calc(80%/3)));
+  grid-template-columns: repeat(auto-fill, minmax(280px, calc(75%/3)));
   grid-gap: 1.5rem;
-  margin-bottom: 1rem;
-
+  margin: 1.5rem 0;
 }
 
 .filter-card {
@@ -144,7 +142,8 @@ input + svg {
 
 .beers {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 0 2em;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
 }
 .beer-wrapper {
@@ -213,6 +212,13 @@ input + svg {
   font-style: italic;
   font-size: 0.9rem;
   line-height: 1.3em;
+  margin-bottom: .5em;
+}
+
+.beer_yeast {
+  font-size: 0.8rem;
+  line-height: 1.2em;
+  opacity: .9;
 }
 
 /* pagination buttons */
