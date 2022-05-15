@@ -1,12 +1,14 @@
+import React from "react"
 import './App.css';
 
+import Header from "./components/Header"
 import Filters from "./components/Filters"
 import Beers from "./pages/Beers"
 
 function App() {
   return (
     <div>
-      <header>Punk API Beer App</header>
+      <Header />
       <Filters />
       <Beers />
     </div>
