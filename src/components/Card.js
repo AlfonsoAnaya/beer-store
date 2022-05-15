@@ -1,6 +1,6 @@
 import React from "react"
 
-const Card = ({beer: {image_url, name, abv, ibu, tagline, description, food_pairing, ingredients}}) => {
+function Card ({beer: {id, image_url, name, abv, ibu, tagline, description, food_pairing, ingredients}}) {
     return(
         <div className="beer-wrapper card">
             <div className="beer">

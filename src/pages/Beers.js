@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import Card from "../components/Card"
 
 const urlBase = "https://api.punkapi.com/v2/beers?page=";
-let page = 1
+let page = 3
 
 function Beers() {
     const [beers, setBeers] = useState([])
@@ -31,7 +31,7 @@ function Beers() {
     if (error) return (<div className="wait"><p>error...</p></div>)
     return (
         <div className="beers">
-            {beers.map(beer => <Card beer={beer}/>)}
+            {beers.map(beer => <Card key={beer.id }beer={beer}/>)}
         </div>
     )
 }
