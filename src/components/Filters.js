@@ -19,7 +19,7 @@ function Filters() {
                 className="filter-all"
                 id="abvAll"
                 value="all"
-                checked
+                defaultChecked
               />
               <span className="filter-all">All</span>
             </label>
@@ -219,7 +219,7 @@ function Filters() {
                 className="filter-all"
                 id="ibuAll"
                 value="all"
-                checked
+                defaultChecked
               />
               <span className="filter-all">All</span>
             </label>
