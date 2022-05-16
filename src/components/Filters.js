@@ -3,6 +3,7 @@ import {Context} from "../Context"
 
 function Filters() {
   let {incrementPage, decrementPage, page} = useContext(Context)
+  let isPrevBtnDisabled = page===1 ? true : false
   return <div className="filters">
     <div className="card filter-card">
       <div className="filter-container">
@@ -11,7 +12,7 @@ function Filters() {
         </div>
         <div className="filter">
           <form id="filterABV" className="filter-form">
-            <label for="abvAll">
+            <label htmlFor="abvAll">
               <input
                 type="radio"
                 name="filter-abv"
@@ -22,7 +23,7 @@ function Filters() {
               />
               <span className="filter-all">All</span>
             </label>
-            <label for="abvWeak">
+            <label htmlFor="abvWeak">
               <input
                 type="radio"
                 name="filter-abv"
@@ -38,7 +39,7 @@ function Filters() {
                 fill="none"
                 className="beer"
               >
-                <g clip-path="url(#clip0)">
+                <g clipPath="url(#clip0)">
                   <path
                     d="M57.2 244.6C47.1 245.7 38.1 238.8 37.1 228.8 37.1 227.2 37.1 226.1 37.1 224.5V113.8L40.2 181C45 178.9 46 180.4 50 182 54 183.6 67.9 182.8 75.2 182.8 82.5 182.8 93.5 182.8 93.5 182.8 95.6 183.4 100.4 185 103 185 107.8 185 111.3 188.2 115 185L119.5 187H137.5C149.5 182.7 139 198 147.5 198 160.7 198 155.5 202 160 193 168.5 202 170 126.5 166 123V111 78C169.2 78 169.4 62 169.4 65.1V224.5C170.5 234.6 163.6 243.6 153.6 244.6 152 244.6 150.9 244.6 149.3 244.6H57.2Z"
                   />
@@ -77,7 +78,7 @@ function Filters() {
                 </defs>
               </svg>
             </label>
-            <label for="abvMedium">
+            <label htmlFor="abvMedium">
               <input
                 type="radio"
                 name="filter-abv"
@@ -93,7 +94,7 @@ function Filters() {
                 fill="none"
                 className="beer"
               >
-                <g clip-path="url(#clip0)">
+                <g clipPath="url(#clip0)">
                   <path
                     d="M57.2 244.9C47.1 245.9 38.1 239.6 37 230.4 37 229 37 228 37 226.6V125.8L40.2 124.3C45 122.4 46 122.9 50 124.3 54 125.8 67.9 127.7 75.3 127.7 82.6 127.7 93.7 127.7 93.7 127.7 95.8 128.2 100.5 125.8 103.2 125.8 108 125.8 113.5 129.2 117.2 126.4L124.8 127.7 134.3 125.8C146.4 121.8 140.4 136.4 148.9 136.4 162.2 136.4 160.4 129.1 152.4 130 146.9 132.3 162.4 135.1 162.4 134.1L166.4 123.2V93.1C169.6 93.1 169.9 78.5 169.9 81.4V226.6C171 235.7 164 243.9 153.9 244.9 152.4 244.9 151.3 244.9 149.7 244.9H57.2Z"
                   />
@@ -132,7 +133,7 @@ function Filters() {
                 </defs>
               </svg>
             </label>
-            <label for="abvStrong">
+            <label htmlFor="abvStrong">
               <input
                 type="radio"
                 name="filter-abv"
@@ -148,7 +149,7 @@ function Filters() {
                 fill="none"
                 className="beer"
               >
-                <g clip-path="url(#clip0)">
+                <g clipPath="url(#clip0)">
                   <path
                     d="M33.9 113.3C26.5 113.3 20.7 107.5 20.7 100.1V48.2C20.7 37.1 30.2 28.1 41.3 28.6 46.6 28.6 51.9 31.2 55.6 34.9 55.1 32.8 54.5 30.7 54.5 28.1 55.1 14.8 66.2 4.2 79.4 4.2 89.5 4.2 98.5 11.1 101.7 20.7 111.7 11.6 127.1 12.7 136.1 23.3 137.1 24.9 138.7 26.5 139.3 28.1 143 25.4 146.7 24.4 151.4 24.4 162.6 24.4 171.6 33.4 171.6 44.5 171.6 49.2 170 53.5 166.8 57.2L165.2 59.3H127.6C127.6 59.8 127.6 59.8 127.6 60.4 127.6 62.5 127.6 64.1 127.6 66.2 127.6 67.2 127.6 68.3 127.6 68.8 127.6 82.1 116.5 92.7 102.7 92.7 91.6 92.7 81.5 84.2 79.4 73.1 74.7 83.1 62.5 87.4 52.4 82.6 50.3 81.5 48.7 80.5 47.1 78.9V100.6C47.1 108 41.3 113.8 33.9 113.3Z"
                     className="a"
@@ -211,7 +212,7 @@ function Filters() {
         </div>
         <div className="filter">
           <form id="filterIBU" className="filter-form">
-            <label for="ibuAll">
+            <label htmlFor="ibuAll">
               <input
                 type="radio"
                 name="filter-ibu"
@@ -222,7 +223,7 @@ function Filters() {
               />
               <span className="filter-all">All</span>
             </label>
-            <label for="ibuWeak">
+            <label htmlFor="ibuWeak">
               <input
                 type="radio"
                 name="filter-ibu"
@@ -244,7 +245,7 @@ function Filters() {
                 <line x1="99.5" y1="12" x2="99.5" y2="13" />
               </svg>
             </label>
-            <label for="ibuMedium">
+            <label htmlFor="ibuMedium">
               <input
                 type="radio"
                 name="filter-ibu"
@@ -267,7 +268,7 @@ function Filters() {
               </svg>
             </label>
 
-            <label for="ibuStrong">
+            <label htmlFor="ibuStrong">
               <input
                 type="radio"
                 name="filter-ibu"
@@ -299,11 +300,11 @@ function Filters() {
           <p>Page: {page}<span id="pageNumber"></span></p>
         </div>
         <div className="filter">
-          <button id="prevPage" className="page-btn" onClick={()=> {decrementPage()}}>
-          <svg class="svg-inline--fa fa-caret-square-left fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
+          <button id="prevPage" className="page-btn" disabled={isPrevBtnDisabled} onClick={()=> {decrementPage()}}>
+          <svg className="svg-inline--fa fa-caret-square-left fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
           <button id="nextPage" className="page-btn" onClick={()=> {incrementPage()}}>
-          <svg class="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M176 354.9V157.1c0-10.7 13-16.1 20.5-8.5l98.3 98.9c4.7 4.7 4.7 12.2 0 16.9l-98.3 98.9c-7.5 7.7-20.5 2.3-20.5-8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
+          <svg className="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M176 354.9V157.1c0-10.7 13-16.1 20.5-8.5l98.3 98.9c4.7 4.7 4.7 12.2 0 16.9l-98.3 98.9c-7.5 7.7-20.5 2.3-20.5-8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
         </div>
       </div>

@@ -11,7 +11,6 @@ function ContextProvider({children}) {
 
     function decrementPage() {
         setPage(page-1)
-        console.log(page)
     }
 
     return (
