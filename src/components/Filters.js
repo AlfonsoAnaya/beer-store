@@ -1,7 +1,8 @@
-import React, {useState} from "react"
+import React, {useContext} from "react"
+import {Context} from "../Context"
 
 function Filters() {
-  const [page, setPage] = useState(1)
+  let {incrementPage, decrementPage, page} = useContext(Context)
   return <div className="filters">
     <div className="card filter-card">
       <div className="filter-container">
@@ -295,16 +296,13 @@ function Filters() {
     <div className="card filter-card">
       <div className="filter-container">
         <div className="filter-text">
-          <p>Page: <span id="pageNumber"></span></p>
+          <p>Page: {page}<span id="pageNumber"></span></p>
         </div>
         <div className="filter">
-          <button id="prevPage" className="page-btn" disabled>
+          <button id="prevPage" className="page-btn" onClick={()=> {decrementPage()}}>
           <svg class="svg-inline--fa fa-caret-square-left fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
-          <button id="nextPage" className="page-btn" onClick={() => {
-            setPage(page+1)
-            console.log(page)
-          }}>
+          <button id="nextPage" className="page-btn" onClick={()=> {incrementPage()}}>
           <svg class="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M176 354.9V157.1c0-10.7 13-16.1 20.5-8.5l98.3 98.9c4.7 4.7 4.7 12.2 0 16.9l-98.3 98.9c-7.5 7.7-20.5 2.3-20.5-8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
         </div>
