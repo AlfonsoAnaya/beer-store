@@ -10,6 +10,7 @@ function ContextProvider({children}) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const urlBase = "https://api.punkapi.com/v2/beers?page=";
+    const resultsPerPage = "&per_page=20"
 
     function handleABVChange(event) {
         setPage(1)
@@ -30,7 +31,7 @@ function ContextProvider({children}) {
     }
     
     useEffect(() => {
-        let url = urlBase + page + ABV + IBU
+        let url = urlBase + page + resultsPerPage + ABV + IBU
         fetch(url)
             .then(response => {
                 if (response.ok) {
