@@ -3,14 +3,32 @@ import React, {useState, useEffect} from "react"
 const Context = React.createContext() 
 
 function ContextProvider({children}) {
-    const [page, setPage] = useState(1)
     const [beers, setBeers] = useState([])
+    const [page, setPage] = useState(1)
+    const [ABV, setABV] = useState("")
+    const [IBU, setIBU] = useState("")
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const urlBase = "https://api.punkapi.com/v2/beers?page=";
 
+    function handleABVChange(event) {
+        setPage(1)
+        if(event.target.value === "all") setABV("")
+        if(event.target.value === "weak") setABV("&abv_lt=4.6")
+        if(event.target.value === "medium") setABV("&abv_gt=4.5&abv_lt=7.6")
+        if(event.target.value === "strong") setABV("&abv_gt=7.5")
+    }
+
+    function handleIBUChange(event) {
+        setPage(1)
+        if(event.target.value === "all") setIBU("")
+        if(event.target.value === "weak") setIBU("&ibu_lt=35")
+        if(event.target.value === "medium") setIBU("&ibu_gt=34&ibu_lt=75")
+        if(event.target.value === "strong") setIBU("&ibu_gt=74")
+    }
+    
     useEffect(() => {
-        let url = urlBase + page
+        let url = urlBase + page + ABV + IBU
         fetch(url)
             .then(response => {
                 if (response.ok) {
@@ -25,14 +43,12 @@ function ContextProvider({children}) {
             .finally(
                 setLoading(false)
             )
-        }, [page]
+        }, [page, ABV, IBU]
     )
-    
     
     function incrementPage() {
         setPage(page+1)
     }
-
     function decrementPage() {
         setPage(page-1)
     }
@@ -41,6 +57,8 @@ function ContextProvider({children}) {
         <Context.Provider value={{
             incrementPage,
             decrementPage,
+            handleABVChange,
+            handleIBUChange,
             beers,
             page,
             loading,

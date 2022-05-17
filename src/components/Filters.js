@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import {Context} from "../Context"
 
 function Filters() {
-  let {incrementPage, decrementPage, page} = useContext(Context)
+  let {incrementPage, decrementPage, handleABVChange, handleIBUChange, page} = useContext(Context)
   let isPrevBtnDisabled = page===1 ? true : false
   return <div className="filters">
     <div className="card filter-card">
@@ -11,7 +11,7 @@ function Filters() {
           <p>Alcohol Vol (ABV):</p>
         </div>
         <div className="filter">
-          <form id="filterABV" className="filter-form">
+          <form id="filterABV" className="filter-form" onChange={handleABVChange}>
             <label htmlFor="abvAll">
               <input
                 type="radio"
@@ -211,7 +211,7 @@ function Filters() {
           <p>Hoppiness (IBU):</p>
         </div>
         <div className="filter">
-          <form id="filterIBU" className="filter-form">
+          <form id="filterIBU" className="filter-form" onChange={handleIBUChange}>
             <label htmlFor="ibuAll">
               <input
                 type="radio"
@@ -300,10 +300,10 @@ function Filters() {
           <p>Page: {page}<span id="pageNumber"></span></p>
         </div>
         <div className="filter">
-          <button id="prevPage" className="page-btn" disabled={isPrevBtnDisabled} onClick={()=> {decrementPage()}}>
+          <button id="prevPage" className="page-btn" disabled={isPrevBtnDisabled} onClick={decrementPage}>
           <svg className="svg-inline--fa fa-caret-square-left fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M272 157.1v197.8c0 10.7-13 16.1-20.5 8.5l-98.3-98.9c-4.7-4.7-4.7-12.2 0-16.9l98.3-98.9c7.5-7.7 20.5-2.3 20.5 8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
-          <button id="nextPage" className="page-btn" onClick={()=> {incrementPage()}}>
+          <button id="nextPage" className="page-btn" onClick={incrementPage}>
           <svg className="svg-inline--fa fa-caret-square-right fa-w-14" aria-hidden="true" focusable="false" data-prefix="far" data-icon="caret-square-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M176 354.9V157.1c0-10.7 13-16.1 20.5-8.5l98.3 98.9c4.7 4.7 4.7 12.2 0 16.9l-98.3 98.9c-7.5 7.7-20.5 2.3-20.5-8.4zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
           </button>
         </div>
