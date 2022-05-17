@@ -13,18 +13,20 @@ function ContextProvider({children}) {
 
     function handleABVChange(event) {
         setPage(1)
-        if(event.target.value === "all") setABV("")
-        if(event.target.value === "weak") setABV("&abv_lt=4.6")
-        if(event.target.value === "medium") setABV("&abv_gt=4.5&abv_lt=7.6")
-        if(event.target.value === "strong") setABV("&abv_gt=7.5")
+        let value = event.target.value
+        if(value === "all") setABV("")
+        if(value === "weak") setABV("&abv_lt=4.6")
+        if(value === "medium") setABV("&abv_gt=4.5&abv_lt=7.6")
+        if(value === "strong") setABV("&abv_gt=7.5")
     }
 
     function handleIBUChange(event) {
         setPage(1)
-        if(event.target.value === "all") setIBU("")
-        if(event.target.value === "weak") setIBU("&ibu_lt=35")
-        if(event.target.value === "medium") setIBU("&ibu_gt=34&ibu_lt=75")
-        if(event.target.value === "strong") setIBU("&ibu_gt=74")
+        let value = event.target.value
+        if(value === "all") setIBU("")
+        if(value === "weak") setIBU("&ibu_lt=35")
+        if(value === "medium") setIBU("&ibu_gt=34&ibu_lt=75")
+        if(value === "strong") setIBU("&ibu_gt=74")
     }
     
     useEffect(() => {
