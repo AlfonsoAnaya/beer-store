@@ -1,5 +1,3 @@
-import React from "react"
-
 function Card ({beer: {id, image_url, name, abv, ibu, tagline, description, food_pairing, ingredients}}) {
     return(
         <div className="beer-wrapper card">
