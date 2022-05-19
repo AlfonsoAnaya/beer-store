@@ -245,3 +245,10 @@ input + svg {
 .a {
   fill: white;
 }
+
+/* footer */
+
+footer {
+  height: 10em;
+  background-color: var(--blue);
+}

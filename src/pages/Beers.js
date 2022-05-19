@@ -8,7 +8,7 @@ function Beers() {
     if (error) return (<div className="wait"><p>error...</p></div>)
     return (
         <div className="beers">
-            {beers.map(beer => <Card key={beer.id }beer={beer}/>)}
+            {beers.map(beer => <Card key={beer.id}beer={beer}/>)}
         </div>
     )
 }
