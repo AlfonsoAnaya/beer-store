@@ -145,6 +145,7 @@ input + svg {
   padding: 0 2em;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
+  margin-bottom: 2em;
 }
 .beer-wrapper {
   justify-content: center;
@@ -248,7 +249,26 @@ input + svg {
 
 /* footer */
 
+
 footer {
-  height: 10em;
   background-color: var(--blue);
+  font-size: .9em;
+  color: var(--off-white);
+  text-align: center;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  text-decoration: underline dotted;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+footer a:hover {
+  text-decoration: underline solid;
+  color: var(--green);
+  cursor: pointer;
 }
